@@ -1,20 +1,15 @@
-#include <iostream>
-#include <vector>
-#include <map>
+#ifndef SCENE_H
+#define SCENE_H
+
+#include <string>
+#include <unordered_map>
 
 class Scene {
-    public:
-    // variables
+public:
     std::string description;
-    std::vector<std::string> choices;
-    std::map<int, Scene*> nextScenes; // index and scene pairs
+    std::unordered_map<int, int> doors; // Each door leads to another by it's number
 
-    // constructor
-    Scene(std::string description, std::vector<std::string> choices);
-
-    // functions
-    void display();
-
-    Scene* getNextScene(int choiceIndex);
-
+    Scene(std::string desc) : description(desc) {};
 };
+
+#endif // SCENE_H

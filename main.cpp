@@ -2,5 +2,7 @@
 
 int main ()
 {
-    Game 
+    Game game;
+    game.start();
+    return 0;
 }
